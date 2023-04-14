@@ -11,6 +11,9 @@ function Item({ info }) {
                 <img src={info.img} width='300px' height='300px' alt='imgitem' />
             </Link>
             <p>{info.title} </p>
+            <p>Caracteristica </p>
+            <p>{info.description} </p>
+            <p>Precio ${info.price} </p>
         </>
     )
 }

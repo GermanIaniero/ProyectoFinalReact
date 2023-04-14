@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemList from './ItemList'
 import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore';
+import { Spinner } from 'reactstrap'
+
 
 
 function ItemListContainer() {
@@ -23,7 +25,8 @@ function ItemListContainer() {
 
   return (
     <div>
-      <ItemList data={data} />
+        <ItemList data={data} />
+        <Spinner />
     </div>
   )
 }
