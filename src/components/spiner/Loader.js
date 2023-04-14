@@ -1,28 +1,28 @@
-import {useState} from "react"
+import { useState } from "react"
 import Spiner from "./Spiner"
 
 function Loader() {
-    
-    const[load, setLoad] = useState(false)
-    const changeLoad=() => {
+
+    const [load, setLoad] = useState(false)
+    const changeLoad = () => {
         setLoad(true);
         setTimeout(() => {
-            setLoad (false);
+            setLoad(false);
         }, 4000)
     }
-    if(load) {
+    if (load) {
         return (
-            <Spiner/>
+            <Spiner />
         )
     }
-    else{
-        return(
+    else {
+        return (
 
-    
+
             <div>
-                <button  className="btn btn-success" onClick={() => changeLoad ()}>cargando..</button>
+                <button className="btn btn-success" onClick={() => changeLoad()}>cargando..</button>
             </div>
-            )
+        )
     }
 }
 
