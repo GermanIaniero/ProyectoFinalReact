@@ -7,9 +7,9 @@ function ItemCart({ product }) {
         <div className='itemcart'>
             <img src={product.img} alt={product.title} />
             <div>
-                <p>Titulo: {product.title} </p>
-                <p>Cantidad: {product.stock} </p>
-                <p>Precio u.: {product.price} </p>
+                <p>Producto: {product.title} </p>
+                <p>Stock: {product.stock} </p>
+                <p>Precio Unitario: ${product.price} </p>
                 <p>Subtotal: $ {(product.stock) * (product.price)} </p>
                 <button onClick={() => removeProduct(product.id)}>Eliminar</button>
 
