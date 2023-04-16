@@ -2,7 +2,7 @@ import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import React from "react";
 import { useState } from "react";
 import { db } from "../Firebase/Firebase";
-import { useCart } from "./CartContext";
+import { useCartContext } from "./CartContext";
 import { useNavigate } from "react-router-dom";
 
 const Checkout = () => {
@@ -10,7 +10,7 @@ const Checkout = () => {
     const [orderId, setOrderID] = useState("");
     const [mensaje, setMensaje] = useState(false);
     const [loader, setLoader] = useState(false);
-    const { cart, cartTotal, clear } = useCart();
+    const { cart, totalPrice, clearCart } = useCartContext();
     const navigate = useNavigate();
 
     const datosComprador = (e) => {
@@ -30,12 +30,12 @@ const Checkout = () => {
             addDoc(ventas, {
                 comprador,
                 items: cart,
-                total: cartTotal(),
+                total: totalPrice(),
                 date: serverTimestamp(),
             })
                 .then((res) => {
                     setOrderID(res.id);
-                    clear();
+                    clearCart();
                 })
                 .catch((error) => console.log(error))
                 .finally(() => setLoader(false));

@@ -4,6 +4,7 @@ const CartContext = React.createContext('')
 export const useCartContext = () => useContext(CartContext);
 
 function CartProvider({ children }) {
+    
     const [cart, setCart] = useState([]);
 
     const totalPrice = () => {
