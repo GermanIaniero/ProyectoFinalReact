@@ -6,6 +6,7 @@ import Cart from './components/Carrito/Cart';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ItemDetailContainer from './components/Productos/ItemDetailContainer';
 import CartProvider from './components/Carrito/CartContext';
+import Checkout from './components/Carrito/Checkout';
 
 function App() {
   return (
@@ -19,8 +20,16 @@ function App() {
             <Route path='/detalle/:detalleId' element={<ItemDetailContainer />} />
             <Route path='/cart' element={<Cart />} />
             <Route path='*' element={<Error />} />
+            <Route path='/checkout' element={<Checkout/>} />
           </Routes>
         </CartProvider>
+
+       
+
+
+
+
+
       </BrowserRouter>
       <div className='text-center p-4' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
         © 2023 Copyright:

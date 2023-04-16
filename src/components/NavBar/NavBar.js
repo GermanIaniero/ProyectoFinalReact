@@ -2,7 +2,6 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import CartWidget from '../CartWidget/CardWidget';
 
-
 function NavBar() {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -17,7 +16,7 @@ function NavBar() {
                         <NavLink className="nav-link" to='/NTB'>Notebooks</NavLink>
                         <NavLink className="nav-link" to='/PCs'>Pcs</NavLink>
                         <NavLink className="nav-link" to='/cart'><CartWidget /></NavLink>
-
+                       
                     </div>
                 </div>
             </div>

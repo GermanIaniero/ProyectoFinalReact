@@ -1,16 +1,16 @@
-import React from "react";
-import urlImage2 from '../img/cart3.svg'
+import React from 'react'
+import { useCartContext } from '../Carrito/CartContext'
 
-const CartWidget = () => {
+
+function CartWidget() {
+    const { totalProducts } = useCartContext();
+
     return (
-        <div>
-            <button type="button" className="btn colorCartButton position-relative">
-                <img src={urlImage2} alt={"carrito"} width={20}  />
-                <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">0</span>
-            </button>
-        </div>
-
-    )
+        <>
+            <i className="bi bi-cart-check"></i>
+            <span>{totalProducts() || ''} </span>
+        </>
+    );
 }
 
 export default CartWidget;

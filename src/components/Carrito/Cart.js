@@ -49,7 +49,8 @@ function Cart() {
       {cart.map(product => <ItemCart key={product.id} product={product} />)
       }
       <p> total:$ {totalPrice()} </p>
-      <button onClick={handleClick}>Generar orden de compra</button> */
+      //*<button onClick={handleClick}>Generar orden de compra</button>  */
+      <button className='btn btn-success' onClick={()=>navegar('/checkout')}>Generar orden de compra</button>
     </>
   )
 }
