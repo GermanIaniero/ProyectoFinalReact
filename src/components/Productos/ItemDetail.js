@@ -22,7 +22,7 @@ function ItemDetail({ data }) {
                     <p>{data.description}</p>
                     <p>${data.price} </p>
 
-                    {goToCart ? <Link to='/cart'>Terminar compra</Link> : <ItemCount initial={1} stock={10} onAdd={onAdd} />}
+                    {goToCart ? <Link to='/cart'>Terminar compra</Link> : <ItemCount initial={1} stock={data.stock} onAdd={onAdd} />}
 
                 </div>
             </div>
