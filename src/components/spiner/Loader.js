@@ -3,12 +3,12 @@ import Spiner from "./Spiner"
 
 function Loader() {
 
-    const [load, setLoad] = useState(false)
+    const [load, setLoad] = useState(false);
     const changeLoad = () => {
         setLoad(true);
         setTimeout(() => {
             setLoad(false);
-        }, 4000)
+        }, 4000);
     }
     if (load) {
         return (

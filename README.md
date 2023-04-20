@@ -1,70 +1,152 @@
-# Getting Started with Create React App
+# Tienda Isa
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## `Introducción`
 
-In the project directory, you can run:
+El sitio se llama Tienda ISA y es un Ecommerce orientado a la venta de artículos de Computación y Celulares conteniendo las siguientes categorías:
 
-### `npm start`
+### `Celulares`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Aquí aparecen los smartphones de las marcas que hay en el mercado que operan en Argentina.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### `Notebooks`
 
-### `npm test`
+Aquí se destacan las notebooks gamers o de alto rendimiento
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `PCs`
 
-### `npm run build`
+Se venden las pcs mas solicitadas por los clientes.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Nota: ¡Todo valuado al día  `y en pesos`, !**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Idea del proyecto 💡​
+Me decidí por elegir esta tématica para el Ecommerce, porque es un tema muy común y muy consumido entre los trabajadores IT. Tambien porque vendo habitualmente estos productos y se lo el cliente quiere saber.
 
-### `npm run eject`
+### Algunas decisiones puntuales 
+- Se eligió la utilización del fondo de color blanco y la fuente negra. Para la creación de las cards del componente Item, Se implementó una imagen de de buena calidad, la cual, se accede a través del botón nombrado "Ver Detalles".
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- El componente ItemCount se utilizó iconos de + -, el badge con la cantidad total de stock, con la caracteristica que evita que pueda agregar al carrito más cantidad de producto del total de stock, ní tampoco descontar más allá del cero. Está caracteritica es señalada cuando el botón azul se tiñe de gris.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Se colocó un loader, para ocupar el lugar de la frase "Cargando..." configurado para que un hook de estado marque el momento en el cual aparece y desaparece.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- El componente CartWidget del Navbar, está creado dentro de un botón el cual será routeado a la zona del carrito de compras.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Se utilizó como backend la base de datos provista por Firebase que permite crear las distintas colecciones tanto de productos como historial de compras.
 
-## Learn More
+- El randerizado de los productos del Carrito, se realizó a traves de una función exportada desde el contexto CartContext debido a ciertos errores que aparecian al ejecutar.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- La muestra de los totales en la vista Cart, fue hecha desde un componente aparte para crear un poco mejor de limpieza en el código.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Se decidió usar como una exportación el componente NavBar debido a un conflicto de nombres.
 
-### Code Splitting
+- Se crearon dos archivos .mht con la grabacion del sitio, uno intermedio y otro final, donde se muestra el funcionamiento de la app, se encuentran en la raiz del proyecto.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
+## Comenzando 🚀
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo._
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Mira **Despliegue** para conocer como desplegar el proyecto.
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+### Pre-requisitos 📋
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+_Se necesita:_
+
+```
+- Una versión de GIT para clonar el repositorio en tu PC Local.
+- tener instalada una versión de Visual Code Studio.
+- Tener instalada una versión de NPM para la instalación de paquetes.
+```
+
+### Instalación 🔧
+
+_Se necesita instalar a través de NPM la siguiente lista de librerias y dependencias para ejecutar el proyecto_
+
+
+### Librerias y dependencias necesarias
+
+```
+
+bootstrap: "^5.1.3",
+Para el CSS.
+
+react: "^18.1.0",
+react-dom: "^18.1.0",
+react-icons: "^4.3.1",
+Una libreria que tiene linkeados varias colecciones de iconos gratis.
+
+react-router-dom: "^6.3.0",
+Para poder crear las rutas.
+
+react-scripts: "5.0.1",
+reactstrap: "^9.0.2",
+Una libreria de estilos y formatos adaptada a los componentes de React.
+```
+Para visualizarlo en su Computador.
+
+```
+En el directorio del proyecto, puedes ejecutarlo:
+`npm start`
+
+Corre la App en modo desarrollador.\
+abra [http://localhost:3000](http://localhost:3000) para verlo en su navegador.
+
+La pagina se recargará cuando haga cambios.\
+Tambien puede ver cualquier linea de error en la consola.
+
+```
+
+## Despliegue 📦
+
+
+```
+`npm run build`
+Para crear la producción en la carpeta `build` .\ 
+esta obtendrá el código minificado para tener una mejor performance y poder cargarlo en un servidor.
+```
+
+
+
+
+## Construido con 🛠️
+
+
+* [Visual Studio Code] (https://code.visualstudio.com/) - El ID utilizado
+* [Reactstrap] (https://reactstrap.github.io/?path=/story/home-installation--page) - El framework visual utilizado
+* [Reac Router] (https://reactrouter.com/) - El enrutador utilizado
+* [React] (https://reactjs.org/) - El framework web usado
+* [NPM] (https://www.npmjs.com) - Manejador de paquetes
+* [Firebase] (https://firebase.google.com/) - Gestor de Backend
+
+
+
+
+
+## Autores ✒️
+
+* **German Ianiero** - *Trabajo Completo* - [German Ianiero](https://github.com/GermanIaniero/ProyectoFinalReact)
+
+## Staff de Apoyo 👨‍🏫​👩‍🏫​
+* **Cristina Gomez** - *Docente* 
+* **Luis Gonzales** - *Tutor asignado*
+
+
+
+
+## Expresiones de Gratitud 🎁
+
+* Les dejó un cordial saludo, agradeciendo su gentileza al observar este Proyecto 📢
+* Agradecimiento al staff de apoyo que dió su punto de vista a mis inquitudes. 
+* Gracias a los compañeros de cursado de React en CoderHouse por su buena onda.
+* Bendiciones para todos.
+
+
+
+---
+⌨️ Atte por [German Ianiero](https://github.com/GermanIaniero)😊
