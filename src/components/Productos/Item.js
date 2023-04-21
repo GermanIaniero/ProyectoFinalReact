@@ -22,7 +22,7 @@ function Item({ info }) {
                         <h5 className="mb-2 text-muted card-subtitle"><p>Precio ${info.price} </p> </h5>
                    </div>
                 <Link to={`/detalle/${info.id}`} className='producto'>
-                   <button class="btn btn-primary">Ver Detalles</button>
+                   <button className="btn btn-primary">Ver Detalles</button>
                 </Link>   
             </div>
             </div> 

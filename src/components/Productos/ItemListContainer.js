@@ -8,25 +8,32 @@ import { Spinner } from 'reactstrap'
 
 function ItemListContainer() {
   const [data, setData] = useState([]);
+  const [loader, setLoader] = useState(false);
   const { categoryId } = useParams();
 
   useEffect(() => {
     const queryDb = getFirestore();
     const queryCollection = collection(queryDb, 'Items');
+    setLoader(true);
     if (categoryId) {
       const queryFilter = query(queryCollection, where('categoryId', '==', categoryId))
       getDocs(queryFilter)
         .then(res => setData(res.docs.map(p => ({ id: p.id, ...p.data() }))))
+        .finally(() => setLoader(false));
     } else {
       getDocs(queryCollection)
         .then(res => setData(res.docs.map(p => ({ id: p.id, ...p.data() }))))
+        .finally(() => setLoader(false));
     }
   }, [categoryId])
 
+  if (loader) {
+    return <Spinner />
+  }
+
   return (
     <div>
-        <ItemList data={data} />
-        <Spinner />
+      <ItemList data={data} />
     </div>
   )
 }

@@ -1,12 +1,17 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import CartWidget from '../CartWidget/CardWidget';
+import urlImage from './proyecto10402.png'
 
 function NavBar() {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container-fluid">
-                <NavLink className="navbar-brand" to='/'>Inicio</NavLink>
+            <Link className="navbar-brand" to={"/"}><img src={urlImage} alt="proyecto" width={100} /></Link>
+                
+
+
+               
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
